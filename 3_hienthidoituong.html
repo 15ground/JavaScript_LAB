@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiển thị đối tượng ra HTML</title>
+    <script src="sanpham.js"></script>
+</head>
+<style>
+    .box-item {
+        width: 400px;
+        border: 1px solid black;
+        padding: 20px;
+    }
+
+    .box-item .item-title {
+        font-size: 30px;
+        ;
+        line-height: 30px;
+        color: pink;
+    }
+
+    .box-item .item-giaban {
+        font-size: 12px;
+        text-decoration: line-through;
+    }
+</style>
+
+<body>
+    <!-- Bước 1: Định nghĩa HTML + CSS cho Object (Chỉ làm Layout) -->
+    <!-- Thuộc tính đối tượng: Tên, giá gốc, % giảm, giá bán -->
+    <div id="items">
+        <!-- <div class="box-item">
+            <h1 class="item-title">Xiaomi Redmi Note 4</h1>
+            <span class="item-giagoc">5000000</span>
+            <span class="item-giaban">4000000</span>
+        </div> -->
+    </div>
+    <!-- Bước 2: Chuyển đối tượng -> HTML bằng JS -->
+    <script>
+        var dienThoaiIphone = taoRaDoiTuongSP("Iphone 5", 4000000, 20);
+        console.log(dienThoaiIphone);
+        // B1: Giả lập 1 đoạn HTML
+        var htmlitem = '';
+        htmlitem = htmlitem + "<div class='box-item'>";
+        htmlitem = htmlitem + "<h1 class='item-title'>Xiaomi Redmi Note 4</h1>";
+        htmlitem = htmlitem + "<span class='item-giagoc'>9000000</span>";
+        htmlitem = htmlitem + "<span class='item-giaban'>4000000</span>";
+        htmlitem = htmlitem + "</div>";
+        // B2: Truy cập vào Node items
+        var nodeItem = document.getElementById('items');
+        nodeItem.innerHTML = htmlitem;
+        // B3: Ghi đoạn HTML ở bước 1 vào Node items
+
+    </script>
+</body>
+
+</html>

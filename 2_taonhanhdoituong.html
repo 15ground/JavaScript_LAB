@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tạo ra một hàm để tạo ra đối tượng</title>
+</head>
+
+<body>
+    <script>
+        // Input: Tên, giá gốc, phần trăm giảm giá
+        // Output: Một object
+        function taoRaDoiTuongSP(ten, giaGoc, phanTramGiamGia) {
+            var sanPham = new Object();
+            // B1: Gán thuộc tính cho đối tượng
+            sanPham.ten = ten;
+            sanPham.giaGoc = giaGoc;
+            sanPham.phanTramGiamGia = phanTramGiamGia;
+            // B2: Viết phương thức tính giá bán
+            sanPham.tinhGiaBan = function () {
+                var giaBan = this.giaGoc * (100 - this.phanTramGiamGia) / 100;
+                return giaBan;
+            }
+            // TODO: Tạo ra Object sanPham
+            return sanPham;
+        }
+        var dienThoaiIphone5 = taoRaDoiTuongSP("Iphone", 5000000, 20);
+        console.log(dienThoaiIphone5);
+        var dienThoaiXiaoMi = taoRaDoiTuongSP("Xiaomi Redmi 4",3500000,20);
+        console.log(dienThoaiXiaoMi);
+    </script>
+</body>
+
+</html>

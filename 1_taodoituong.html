@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Định nghĩa đối tượng</title>
+</head>
+
+<body>
+    <script>
+        // 1. Tạo đối tượng
+        // 2. Thêm các thuộc tính cho đối tượng
+        // 3. Viết phương thức cho đối tượng
+        // 4. Sử dụng đối tượng (Sử dụng thuộc tính và phương thức)
+        var dienThoaiXiaomi = new Object();
+        dienThoaiXiaomi.ten = "Xiaomi Mi 9";
+        dienThoaiXiaomi.giaGoc = 3000000;
+        dienThoaiXiaomi.phanTramGiamGia = 20;
+        // Viết phương thức tính: Viết ra hàm để tính toán và xử lý trong đối tượng
+        dienThoaiXiaomi.tinhGiaBan = function () {
+            // this chính là đối tượng, tức là this = dienThoaiXiaomi
+            var giaBan = this.giaGoc * (100 - dienThoaiXiaomi.phanTramGiamGia) / 100;
+            return giaBan;
+        }
+        // Cách sử dụng: 
+        console.log(dienThoaiXiaomi);
+        console.log("Tên: " + dienThoaiXiaomi.ten);
+        console.log("Giá gốc: " + dienThoaiXiaomi.giaGoc);
+        // Gọi phương thức
+        console.log("Giá bán: " + dienThoaiXiaomi.tinhGiaBan());
+        // So sánh: Tức là so sánh với cái gì, đối tượng nào!
+        /*dienThoaiXiaomi.soSanh = function (dienThoaiKhac) {
+            // Scope (Phạm vi): 1. This (Chính nó), 2. Các biến được truyền vào, 3. Biến toàn cục
+            if (this.giaGoc > dienThoaiKhac.giaGoc) {
+                console.log("Mắc hơn");
+            }
+        }*/
+    </script>
+</body>
+
+</html>
